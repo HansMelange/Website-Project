@@ -1,0 +1,30 @@
+p {
+ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ color: #ffffff;
+}
+body {
+ background-color: #000000;
+}
+h1 {
+ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ text-align: center;
+ color: #ffffff;
+}
+.hero { /* "hero" image at the top of the page */
+ background-image: url('generated_video.gif');
+ background-size: cover;
+ height: 500px;
+ margin: 0%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: white;
+ text-align: center;
+ 
+  mask-image: linear-gradient(to bottom, black 80%, transparent); /* fade out at the bottom */
+
+}
+.hero h1, .hero p {
+ mix-blend-mode: difference; /* Inverts the text color based on the background */
+ color: white; /* Fallback color */
+}
