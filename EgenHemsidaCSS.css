@@ -60,16 +60,73 @@ h1 {
  padding: 10px 20px;
  cursor: pointer;
  opacity: 1;
- font-size: 10px;
+ font-size: 15px;
  animation: fadeIn 2s;
+ 
+ letter-spacing: 0px;
+ transition: letter-spacing 0.3s ease-out;
+
  text-decoration: none;
- font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ text-transform: uppercase;
+ font-weight: bold;
+ font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .Divider a:visited { /* Divider buttons info */
  color: rgb(255, 255, 255);
  background: rgba(76, 175, 80, 0);
  
+}
+.Divider a:hover { /* Divider buttons info */
+ background: rgba(76, 175, 80, 0);
+ color: #ffffff;
+ letter-spacing: 3px;
+ transition: letter-spacing 0.3s ease-in;
+
+  
+}
+
+.button-center { /* center the image buttons */
+ text-align: center;
+ margin-top: 40px; /* Add some space above the button */
+}
+
+.button-1 { 
+ background-color: #000000;
+ margin-left: 5px;
+ border-radius: 5px;
+ border:  none;
+
+ animation: MoveIn1 1s ease-in-out;
+
+}
+
+.button-2 {
+ background-color: #000000;
+ margin-left: 5px;
+ border-radius: 5px;
+ border:  none;
+ opacity: 0; /* Initially hidden */
+ animation: MoveIn1 1s ease-in-out forwards; /* Add forwards to retain final state */
+ animation-delay: 0.5s; /* Delay for the third button */
+}
+
+
+.button-3 {
+ background-color: #2b2a2a;
+ margin-left: 5px;
+ border-radius: 5px;
+ border: none;
+ opacity: 0; /* Initially hidden */
+ animation: MoveIn1 1s ease-in-out forwards; /* Add forwards to retain final state */
+ animation-delay: 1s; /* Delay for the third button */
+}
+
+.button-1 p, .button-2 p, .button-3 p {
+  position: absolute; top: 80%; left: 50%; transform: translate(-50%, -50%); color: white; font-weight: bold;
+}
+.button-1 div, .button-2 div, .button-3 div {
+ position: relative; display: inline-block; text-align: center;
 }
 
 /* -------- KEYFRAME ANIMATION -------- */
@@ -87,4 +144,10 @@ h1 {
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+/* Animation for moving in the image buttons */
+@keyframes MoveIn1 {
+  0% { transform: translateY(10%); opacity: 0;}
+  100% { transform: translateY(0); opacity: 1;}
 }
