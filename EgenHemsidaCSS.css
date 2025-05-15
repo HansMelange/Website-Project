@@ -11,25 +11,40 @@ h1 {
  color: #ffffff;
 }
 .hero { /* "hero" image at the top of the page */
- background: url('Images/ScrolingBackground.png') repeat-x; height: 500px; width: 1000px; animation: slide 60s linear infinite;
- background-size: cover;
- height: 500px;
- margin: 0%;
- display: flex;
- justify-content: center;
- align-items: center;
- color: white;
- text-align: center;
- mask-image: linear-gradient(to bottom, black 80%, transparent); /* fade out at the bottom */
-
+	position: relative; /* Enable positioning for pseudo-elements */
+	background: none; /* Remove the original background */
+	height: 500px;
+	width: 100%; /* Make the container span the full width */
+	overflow: hidden; /* Prevent overflow issues */
+	margin: 0%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	text-align: center;
+	mask-image: linear-gradient(to bottom, black 80%, transparent); /* Fade out at the bottom */
 }
+
+.hero::before { /* Pseudo-element for the scrolling background */
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200%; /* Double the width for seamless scrolling */
+	height: 100%;
+	background: url('Images/ScrolingBackground.png') repeat-x; /* Ensure the image repeats horizontally */
+	background-size: auto 100%; /* Scale the image height to fit the container */
+	animation: slide 20s linear infinite; /* Infinite scrolling animation */
+	z-index: -1; /* Place behind the content */
+}
+
 @keyframes slide {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-1920px, 0, 0); /* The image width */
-  }
+	0% {
+		transform: translateX(0); /* Start at the initial position */
+	}
+	100% {
+		transform: translateX(-47%); /* Move by half the width for seamless looping */
+	}
 }
 .hero h1, .hero p {
  mix-blend-mode: difference; /* Inverts the text color based on the background */
