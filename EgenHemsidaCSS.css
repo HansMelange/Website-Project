@@ -11,7 +11,7 @@ h1 {
  color: #ffffff;
 }
 .hero { /* "hero" image at the top of the page */
- background-image: url('generated_video.gif');
+ background: url('Images/ScrolingBackground.png') repeat-x; height: 500px; width: 1000px; animation: slide 60s linear infinite;
  background-size: cover;
  height: 500px;
  margin: 0%;
@@ -20,9 +20,16 @@ h1 {
  align-items: center;
  color: white;
  text-align: center;
- 
-  mask-image: linear-gradient(to bottom, black 80%, transparent); /* fade out at the bottom */
+ mask-image: linear-gradient(to bottom, black 80%, transparent); /* fade out at the bottom */
 
+}
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1920px, 0, 0); /* The image width */
+  }
 }
 .hero h1, .hero p {
  mix-blend-mode: difference; /* Inverts the text color based on the background */
