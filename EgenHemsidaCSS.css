@@ -128,17 +128,7 @@ h1 {
  position: relative; display: inline-block; text-align: center;
 }
 
-/* Fade-in Section Styles */
-.fade-in-section {
-    opacity: 0;
-    transform: translateY(30px); /* Start slightly lower */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
- 
-.fade-in-section.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+
 /* -------- KEYFRAME ANIMATION -------- */
 
 /* Animation for the scrolling background */
