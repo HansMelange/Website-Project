@@ -96,9 +96,7 @@ h1 {
  margin-left: 5px;
  border-radius: 5px;
  border:  none;
-
- animation: MoveIn1 1s ease-in-out;
-
+ /* opacity and animation handled by JS */
 }
 
 .button-2 {
@@ -106,21 +104,22 @@ h1 {
  margin-left: 5px;
  border-radius: 5px;
  border:  none;
- opacity: 0; /* Initially hidden */
- animation: MoveIn1 1s ease-in-out forwards; /* Add forwards to retain final state */
- animation-delay: 0.5s; /* Delay for the third button */
+ /* opacity and animation handled by JS */
 }
-
 
 .button-3 {
  background-color: #2b2a2a;
  margin-left: 5px;
  border-radius: 5px;
  border: none;
- opacity: 0; /* Initially hidden */
- animation: MoveIn1 1s ease-in-out forwards; /* Add forwards to retain final state */
- animation-delay: 1s; /* Delay for the third button */
+ /* opacity and animation handled by JS */
 }
+
+.button-1:hover, .button-2:hover, .button-3:hover {
+ background-color: #ffffff;
+ animation: MoveUp 0.5s ease-in-out forwards; /* Move up on hover */
+}
+
 
 .button-1 p, .button-2 p, .button-3 p {
   position: absolute; top: 80%; left: 50%; transform: translate(-50%, -50%); color: white; font-weight: bold;
@@ -148,6 +147,17 @@ h1 {
 
 /* Animation for moving in the image buttons */
 @keyframes MoveIn1 {
-  0% { transform: translateY(10%); opacity: 0;}
-  100% { transform: translateY(0); opacity: 1;}
+	0% { transform: translateY(10%); opacity: 0;}
+	100% { transform: translateY(0); opacity: 1;}
+}
+
+
+@keyframes MoveUp{
+  0% { transform: translateY(0%); background-color: black;}
+  100% { transform: translateY(-10%); background-color: white;}
+}
+
+@keyframes MoveDown {
+  0% { transform: translateY(-10%); background-color: white; }
+  100% { transform: translateY(0%); background-color: black; }
 }
