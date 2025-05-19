@@ -68,8 +68,18 @@ body {
  color: #ffffff;
  letter-spacing: 3px;
  transition: letter-spacing 0.3s ease-in;
+}
 
-  
+.Img-Button{
+    background-color: #00000000;
+    margin-left: 5px;
+    border-radius: 5px;
+    border:  none;
+    /* opacity and animation handled by JS */
+}
+.Img-Button:hover {
+ background-color: #000000;
+ animation: MoveUp 0.5s ease-in-out forwards; /* Move up on hover */
 }
 
 .scrolling-text-content {
@@ -116,9 +126,15 @@ body {
     margin: 0 auto;
     text-align: center;
 }
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+}
 
 /* Fade-in Section Styles */
 .fade-in-section {
+    margin-top: 10px;
     opacity: 0;
     transform: translateY(30px); /* Start slightly lower */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -150,4 +166,9 @@ body {
         */
         transform: translateX(-50%);
     }
+}
+
+@keyframes MoveUp{
+  0% { transform: translateY(0%); background-color: rgba(0, 0, 0, 0);}
+  100% { transform: scale(110%); background-color: rgba(255, 255, 255, 0);}
 }
