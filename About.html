@@ -1,31 +1,33 @@
+<!--
+AboutThisWebsite.html
+- This page displays an animated scrolling text background and an overlay with info about this page.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character set and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced roblox tutorials</title>
+    <!-- External CSS for scrolling text effect and more -->
     <link rel="stylesheet" href="Scrollingtext.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #000000;
-            padding: 50px;
-            min-height: 200vh;
-            background-color: #000000;
-        }
-</style>
 </head>
 <body>
-    </div>
+    <!-- Navigation divider with links to other pages -->
     <div class ="Divider">
       <hr>
-      <a href="About.html">About me</a>
-      <a href="About.html">About this website</a>
+      <a href="EgenHemsidaPerAnders.html">Home</a>
+      <a href="AboutThisWebsite.html">About this website</a>
       <a href="About.html">My Projects</a>
       <a href="About.html">Contact</a>
     </div>
+    <!--
+    Scrolling text background:
+    - The effect is achieved with CSS keyframes in Scrollingtext.css.
+    - ugly way of doing it but i dont know how to do it better in html
+    -->
     <div class="scrolling-text-bg">
+        <!-- Repeat as many rows as needed for the background density -->
         <div class="scrolling-text-row"><div class="scrolling-text-content"><span>ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME </span><span>ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME </span></div></div>
         <div class="scrolling-text-row"><div class="scrolling-text-content"><span>ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME </span><span>ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME </span></div></div>
         <div class="scrolling-text-row"><div class="scrolling-text-content"><span>ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME </span><span>ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME </span></div></div>
@@ -43,13 +45,17 @@
         <div class="scrolling-text-row"><div class="scrolling-text-content"><span>ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME </span><span>ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME </span></div></div>
         <div class="scrolling-text-row"><div class="scrolling-text-content"><span>ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME </span><span>ABOUT ME ABOUT ME ABOUT ME ABOUT ME ABOUT ME </span></div></div>
     </div>
+    <!--
+    Main content overlay:
+    - Appears above the animated background.
+    -->
     <div class="content-overlay fade-in-section">
-           <p>Hello! My name is Anton and im a 18 year old student from Sweden</p>
+           <p>Hello! My name is Anton and i'm a 18 year old student from Sweden</p>
            <p>I've been intrested in making video games since i was little</p>
            <p>Starting at a very young age in scratch and then moving into Unity and Godot. Now days im mostly working in Roblox</p>
-
-              
+           <p>Some other random facts about me is that I like to </p>
     </div>
+    <!-- for scrolling in / loading in fade in animations-->
     <script src="javascript.js"></script>
 </body>
 </html>
