@@ -1,0 +1,74 @@
+<!--
+About.html
+- This page displays an animated scrolling text background and an overlay with personal info.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced roblox tutorials</title>
+    <!-- External CSS for scrolling text effect and more -->
+    <link rel="stylesheet" href="Scrollingtext.css">
+</head>
+<body>
+    <!-- Navigation divider with links to other pages -->
+    <div class ="Divider">
+      <hr>
+      <a href="EgenHemsidaPerAnders.html">Home</a>
+      <a href="About.html">About me</a>
+      <a href="MyProejcts.html">My Projects</a>
+      <a href="About.html">Contact</a>
+    </div>
+    <!--
+    Scrolling text background:
+    - The effect is achieved with CSS keyframes in Scrollingtext.css.
+    - ugly way of doing it but i dont know how to do it better in html
+    -->
+    <div class="scrolling-text-bg">
+        <!-- Repeat as many rows as needed for the background density -->
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+        <div class="scrolling-text-row"><div class="scrolling-text-content"><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span><span>GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING GLOBAL MATCH MAKING </span></div></div>
+    </div>
+        <!--
+    Main content overlay:
+    - Appears above the animated background.
+    -->
+    <div class="content-overlay fade-in-section">
+        <p>In this tutorial i'll be going over how to make a CROSS SERVER global match making system, Just like you see in almost all other oniline games like CS:GO, Overwatch and many many more</p>
+        <p>This tutorial will also asume that you have an intermidet understanding or Roblox Studio and LUAU</p>
+        <P>NOTE: Quite a bit of this script is not originally written by me. but i found no tutorial on it and ive changed some stuff.</P>
+    </div>
+    <div class="content-overlay fade-in-section">
+        <p>First create a script called "Party Server" in the Server Script Service</p>
+        <img src="Images/GlobalMatchMakingImages/MakingPartServer.png" alt="making script image" width="50%" height="50%">
+    </div>
+    <div class="content-overlay fade-in-section">
+        <p>After that we will be creating some varibles at the tope of the script</p>
+        <img src="Images/GlobalMatchMakingImages/ConfVaribles.png" alt="making script image" width=80%, height="80%">
+
+        <p>- Place id will be the id of the place where you want the actuall game to take place</p>
+        <p>- Min queue is the min amount of players needed to start putting togheter a game. Max Queue is the max amount of players in the actuall game</p>
+        <P>- Time after descripes how long after weve found the MinQueue amount of players we will wait for other players to fill up the server</P>
+    </div>
+
+            
+    <!-- for scrolling in / loading in fade in animations-->
+    <script src="javascript.js"></script>
+</body>
+</html>
