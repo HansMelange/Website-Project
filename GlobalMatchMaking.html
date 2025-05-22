@@ -50,9 +50,9 @@ About.html
     - Appears above the animated background.
     -->
     <div class="content-overlay fade-in-section">
-        <p>In this tutorial i'll be going over how to make a CROSS SERVER global match making system, Just like you see in almost all other oniline games like CS:GO, Overwatch and many many more</p>
+        <p>In this tutorial i'll be going over how to make a CROSS SERVER global match making system with parties and solo queue, Just like you see in almost all other oniline games like CS:GO, Overwatch and many many more</p>
         <p>This tutorial will also asume that you have an intermidet understanding or Roblox Studio and LUAU</p>
-        <P>NOTE: Quite a bit of this script is not originally written by me. but i found no tutorial on it and ive changed some stuff.</P>
+        <P>NOTE: Quite a bit of this script is not originally written by me. but i found no tutorial on it and ive changed some stuff. I also have dont know who the original coder of this is since i didint get it from the original source. if you know please wirte to me and ill leave credit or remove this tutorial if needed</P>
     </div>
     <div class="content-overlay fade-in-section">
         <p>First create a script called "Party Server" in the Server Script Service</p>
@@ -64,10 +64,86 @@ About.html
 
         <p>- Place id will be the id of the place where you want the actuall game to take place</p>
         <p>- Min queue is the min amount of players needed to start putting togheter a game. Max Queue is the max amount of players in the actuall game</p>
-        <P>- Time after descripes how long after weve found the MinQueue amount of players we will wait for other players to fill up the server</P>
+        <P>- Time after is the amount of time we will wait for the server to fill up after rge min queue amount has been reached</P>
+        <p>- minMembers is the minimum amount of players in a party that can queue, so if you want to force peapole to queue up with 3 peapole before being able to play</p>
+        <p>- maxMemebers is the maximum amount of members in one given party</p>
     </div>
 
-            
+    <div class="content-overlay fade-in-section">
+        <p>After that go ahead and create a PartyRs folder in replicated storage with a RE and a praties folder like this:</p>
+        <img src="Images/GlobalMatchMakingImages/RE.png" alt="making script image" width=50%, height="50%">
+
+        <p>Then we will want to get some libraries and the RE</p>
+        <img src="Images/GlobalMatchMakingImages/Libraries.png" alt="making script image" width=80%, height="80%">
+        <p>
+            here we will go ahead and get both the
+            <a href="https://create.roblox.com/docs/reference/engine/classes/TeleportService">TeleportService</a> and the
+            <a href="https://create.roblox.com/docs/reference/engine/classes/MemoryStoreService">MemoryStoreService.</a>
+        </p>
+        <p>We also create a queue var that links with "QueueStore" If your unsure about the 
+          <a href="https://create.roblox.com/docs/cloud-services/data-stores">Datastores</a>
+          in roblox work or what the 
+          <a href="https://create.roblox.com/docs/cloud-services/memory-stores/sorted-map">GetSortedMap</a>
+          call dose then i'd recommend reading up on that</p>
+    </div>
+    <div class="content-overlay fade-in-section">
+        <p>Then we will go ahead and start maping out if statments for the main function</p>
+        <img src="Images/GlobalMatchMakingImages/MainFunc.png" alt="making script image" width=90%, height="90%">
+        <p>How this works is we pass a string called "instructions" to the server from and with that we do diffrent functionalities.</p>
+        <p>Its done like this so that we only have to use on Remote Event for the entire thing insted of six diffrent once. reducing cluter</p>
+        <p>What these do is pretty self explanatory:</p>
+        <P>-Create makes a passed party</P>
+        <P>-Join joins a passed party</P>
+        <P>-Leave leaves a passed party</P>
+        <P>-Kick kicks a passed player from the passed party</P>
+        <P>-Queue queues a passed party</P>
+    </div>
+
+    <div class="content-overlay fade-in-section">
+        <p>Lets start by putting a if statment in the "CREATE" section</p>
+        <img src="Images/GlobalMatchMakingImages/Create1.png" alt="making script image" width=120%, height="120%">
+        <P>This will check so that we are withing the Min and Max memebers in order to create a party</P>
+        <P>We will also pass a LeaveParty Function in order to make sure no player is in two parties(we will make this functions soon)</P>
+    </div>
+
+    <div class="content-overlay fade-in-section">
+        <p>Then we will start instancing some stuff</p>
+        <img src="Images/GlobalMatchMakingImages/Create2.png" alt="making script image" width=100%, height="100%">
+        <P>First we instance a new folder. This folder will keep all the players that are in the party we are creating</P>
+        <P>We will then instance
+           <a href="https://create.roblox.com/docs/reference/engine/classes/IntValue">IntValue</a>
+           under the party folder.This will be used to set how many peapole can join the Party
+        </P>
+        <P>We then also create another folder under the main party folder. This folder will directly keep track of the players in the party</P>
+    </div>
+
+    <div class="content-overlay fade-in-section">
+        <p>After that we will nest a function called updateQueue still in the "CREATE" section of the main function</p>
+        <img src="Images/GlobalMatchMakingImages/Create3.png" alt="making script image" width=100%, height="100%">
+        <p>first we take the queue var that we created before and remove the partyname from it in order to not have duplicates</P>
+        <P>Then we will check if party active and if we find "IN QUEUE" as a child of the party we have made. (more on this later)</P>
+        <P>if we are in queue and our party is active then we will go ahead and create a members table that will then include all the children of the memeber folder from the party</P>
+        <p>Then we will add back the current party and its members to the queue var</p>
+        <P>NOTE: seeing as we want to queue cross servers we need to store what parties are queuing in a datastore so that all server instances can read from it. This works beacuse roblox auto syncs all Datastores cross server. There are other ways of doing this that may be more effective if you are reaching the
+            <a href="https://create.roblox.com/docs/cloud-services/data-stores/error-codes-and-limits#metadata-limits">Limits</a>
+            of the datastore but for this tutorial we will be using this method</P>
+        </P>    
+
+    </div>
+
+    <div class="content-overlay fade-in-section">
+        <p>After that we will call the updateQueue Function when either a child of the members folder is added or removed</p>
+        <img src="Images/GlobalMatchMakingImages/Create4.png" alt="making script image" width=100%, height="100%">
+        <P>We will also completely remove the party if the actuall folder gets destroyed (Will we get back to this later)</P>
+        
+    </div>
+    <div class="content-overlay fade-in-section">
+        <p>Now we have officaly created a new party. all we need to do now is make the client that created this party join his own party. and be the leader of the party</p>
+        <img src="Images/GlobalMatchMakingImages/Create5.png" alt="making script image" width=100%, height="100%">
+        <P>we also fire "JOIN" to the client and the party to join. more on this on the Client Side script section</P>
+    </div>
+
+
     <!-- for scrolling in / loading in fade in animations-->
     <script src="javascript.js"></script>
 </body>
